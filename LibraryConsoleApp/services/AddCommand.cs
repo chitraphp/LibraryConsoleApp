@@ -25,7 +25,10 @@ namespace LibraryConsoleApp.services
 			decimal.TryParse(Console.ReadLine(),out price);
 
 			Book book = new Book(author, price, publisher, title);
+			//adding data to object
 			library.AddBook(book);
+
+			//adding data to json file
 			AddDataToFile.WriteToFile2(book);
 			//RaiseBookAddedEvent(new AddedBookToLibEventArgs(book.Title));
 			

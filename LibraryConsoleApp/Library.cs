@@ -26,7 +26,7 @@ namespace LibraryConsoleApp
 		protected virtual void RaiseBookAddedEvent(AddedBookToLibEventArgs eventArgs)
 		{
 			BookAdded?.Invoke(this, eventArgs);
-			Console.WriteLine("adddd");
+			Console.WriteLine("Event has completed raised from library");
 		}
 
 	}

@@ -12,7 +12,7 @@ namespace LibraryConsoleApp.util
 {
 	class AddDataToFile
 	{
-		public static string FILE_PATH = "C:\\chitra\\Sollers\\booksList.txt";
+		//public static string FILE_PATH = "C:\\chitra\\Sollers\\booksList.txt";
 		public static string FILE_PATH1 = "C:\\chitra\\Sollers\\books.json";
 		public static string path = "C:\\chitra\\Sollers\\books2.json";
 
@@ -78,26 +78,7 @@ namespace LibraryConsoleApp.util
 			
 		}
 
-		public static void WriteToFileJson(Book book)
-		{
-			//string json = JsonConvert.SerializeObject(book);
-			//File.WriteAllText(@"C:\\chitra\\Sollers\\books.json", json);
-			TextWriter writer = null;
-			try
-			{
-				File.Open(FILE_PATH1, FileMode.Create);
-				var contentsToWriteToFile = JsonConvert.SerializeObject(book);
-				writer = new StreamWriter("C:\\chitra\\Sollers\\books.json", true);
-				writer.Write(contentsToWriteToFile);
-			}
-			finally
-			{
-				if (writer != null)
-					writer.Close();
-				
-			}
-
-		}
+		
 		public static Book ReadFromfileJson()
 		{
 			TextReader reader = null;
@@ -118,7 +99,7 @@ namespace LibraryConsoleApp.util
 		public static void WriteToFile2( Book book)
 		{
 			FileStream F = new FileStream(path, FileMode.OpenOrCreate | FileMode.Append,
-			
+
 				FileAccess.ReadWrite);
 			try
 			{
